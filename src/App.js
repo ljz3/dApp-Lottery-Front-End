@@ -1,49 +1,20 @@
 import './App.css';
-import {
-  Avatar,
-  Blockie,
-  Box,
-  Button,
-  Card,
-  Checkbox,
-  Field,
-  Flash,
-  Flex,
-  Heading,
-  Icon,
-  Image,
-  Input,
-  Link,
-  Loader,
-  MetaMaskButton,
-  UPortButton,
-  Modal,
-  Pill,
-  Progress,
-  QR,
-  Radio,
-  Select,
-  EthAddress,
-  Slider,
-  Table,
-  Text,
-  Textarea,
-  ToastMessage,
-  Tooltip,
-  BaseStyles,
-  ThemeProvider,
-  theme,
-} from 'rimble-ui'
+import NavigationBar from "./components/NavigationBar/NavigationBar";
+import Home from "./components/Home/Home";
+import Enter from "./components/Enter/Enter";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
 function App() {
   return (
-    <div className="App">
-    <Box>
-      <Text>Icon component from rimble-ui</Text>
-
-    </Box>
-    </div>
+    <Router>
+      <NavigationBar/>
+      <Switch>
+        <Route path="/enter" component={Enter}/>
+        <Route path="/" component={Home}/>
+      </Switch>
+    </Router>
   );
 }
 
